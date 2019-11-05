@@ -1,0 +1,60 @@
+
+Lookup by HTTP GET
+GET	/trial/lookup
+Parameters
+878408007583
+string  
+UPC, ISBN or EAN
+
+Response Messages
+400	INVALID_QUERY: missing required parameters
+404	NOT_FOUND: no match was found
+429	EXCEED_LIMIT: exceed request limit
+500	SERVER_ERR: internal server error
+default	other errors
+
+
+https://api.upcitemdb.com/prod/trial/lookup?upc=878408007583
+
+RESPONSE BODY
+{
+  "code": "OK",
+  "total": 1,
+  "offset": 0,
+  "items": [
+    {
+      "ean": "0878408007583",
+      "title": "BFF Canned Cat Tuna & Chicken Chuckles 5.5 oz",
+      "description": "High quality protein with Fit for Human Consumption Muscle Meat minimal to no carbohydrates and low in fat - no fillers.",
+      "upc": "878408007583",
+      "brand": "Best Feline Friend",
+      "model": "8689",
+      "color": "",
+      "size": "",
+      "dimension": "5.1 X 7.9 X 5.5 inches",
+      "weight": "0.3 Pounds",
+      "currency": "",
+      "lowest_recorded_price": 1.25,
+      "highest_recorded_price": 41.99,
+      "images": [
+        "http://images.prosperentcdn.com/images/250x250/www.onlynaturalpet.com/Images/Products/278231_500.jpg"
+      ],
+      "offers": [
+        {
+          "merchant": "Only Natural Pet Store",
+          "domain": "onlynaturalpet.com",
+          "title": "BFF Canned Cat Tuna & Chicken Chuckles 5.5 oz",
+          "currency": "",
+          "list_price": "",
+          "price": 1.25,
+          "shipping": "",
+          "condition": "New",
+          "availability": "",
+          "link": "http://www.upcitemdb.com/norob/alink/?id=z2p243z2035364&tid=1&seq=1572976969&plt=d5004e77dd9de3bc5d7b9ce6e54059e4",
+          "updated_t": 1495001350
+        }
+      ],
+      "asin": "B004N5CF8I"
+    }
+  ]
+}
