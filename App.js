@@ -4,6 +4,18 @@ import { AppLoading } from "expo";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 import CFTNavigator from "./navigation/CFTNavigator";
+import { createStore, combineReducers } from 'redux'
+import { Provider } from 'react-redux'
+
+import foodsReducer from './store/reducers/foods'
+import feedingsReducer from './store/reducers/feedings'
+
+const rootReducer = combineReducers({
+  foods: foodsReducer,
+  feedings: feedingsReducer
+})
+
+const store = createStore(rootReducer)
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -25,20 +37,7 @@ export default function App() {
     );
   }
 
-  return <CFTNavigator />;
-
-  // return (
-  //   <View style={styles.screen}>
-  //     <Text>Open up App.js to start working on your appasdfsdf.</Text>
-  //   </View>
-  // );  
+  return <Provider store={store} >
+    <CFTNavigator />
+  </Provider>
 }
-
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center"
-  }
-});

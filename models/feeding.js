@@ -1,13 +1,11 @@
-class Feeding {
-  constructor(
-    timestamp,
-    upc,
-    eaten
-  ) {
-    this.timestamp = timestamp
-    this.upc = upc
-    this.eaten = eaten
+/** 
+* Creates a new Feeding object.
+*/
+export const feeding = (timestamp, upc, eaten) => {
+  return {
+    timestamp: timestamp,
+    upc: upc,
+    initialReaction: null,
+    eaten: eaten
   }
 }
-
-export default Feeding;
