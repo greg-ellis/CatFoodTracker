@@ -53,6 +53,9 @@ const ScanScreen = props => {
           const newFood = food(upc, info.brand, info.title, image)
           dispatch(addFood(newFood))      
         }
+      } else {
+        console.log('BAD UPC CODE LOOKUP?')
+        console.log(results)
       }
     };
 

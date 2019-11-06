@@ -55,7 +55,7 @@ const MainScreen = props => {
       <Text>{lastFood ? lastFood.title : 'Unknown'}</Text>
       <Button title='Edit' onPress={() => props.navigation.navigate('EditFeeding')}/>
 
-      <Button title="Reports" />
+      <Button title="Reports" onPress={() => {props.navigation.navigate('Reports')}} />
     </View>
   );
 };
